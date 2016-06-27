@@ -1,0 +1,25 @@
+<html>
+<head><title>ajax test</title>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/wikk_params.js"></script>
+<script>
+
+function dump_args(args) {
+  document.getElementById("xyc").innerHTML = JSON.stringify(args) + "<br>";
+}
+
+function init() {
+  wikk_params.getURLParameters();
+  dump_args(wikk_params.ARGV);
+}
+
+</script>
+
+</head>
+<body onload="init();">
+<h2>Dumped Args</h2>
+  <div id="xyc"></div>
+<hr><br>
+</body>
+</head>
+
