@@ -1,2 +1,2 @@
-#!/bin/sh
-../minimise_js/minimise.rb wikk_params.js
+#!/bin/bash
+minimise.rb wikk_params.js
