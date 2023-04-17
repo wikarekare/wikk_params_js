@@ -21,21 +21,29 @@ var wikk_params = ( function() {
                 value = unescape(sParam[1]);
               else
                 value = null;
-                
-              if(argv[key] == null)
-                  argv[key] = value;
-              else if(typeof argv[key] === 'string')
-                  argv[key] = [ argv[key], value ];
-              else 
-                  argv[key].push(value);
+
+              if(argv[key] == null){
+                argv[key] = value;
+              }
+              else if(typeof argv[key] === 'string'){
+                argv[key] = [ argv[key], value ];
+              }
+              else {
+                argv[key].push(value);
+              }
           }
       }
   }
-  
+
   function get_argv(key) {
-    return argv[key];
+    if(key in argv) {
+      return argv[key];
+    }
+    else {
+      return null;
+    }
   }
-  
+
   function version() { return VERSION; }
 
   //return a hash of key: function pairs, with the key being the same name as the function.
